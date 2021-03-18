@@ -1,32 +1,24 @@
     app:
         name: Nginx
-        code: nginx
+        code: NGINX
         notify: appzdev@cloudbourne.co
+        
     build:
-        version: 1.14
+        version: 1.2
         env: DEV
         build_file: none
         output_files: output/*.zip
         image_template: nginx-1.14
+        
     deploy:
-        context: DevClever-India/DEV
-        type: statefulset
+        context: alpha/DEV
         replicas: 1
         port:
-        - 80
         - 443
-    volumes:
-      - claim: nginx-data
-        mount: /var/www
-        name: data
-        size: 5Gi
-      - claim: nginx-backup
-        mount: /appz/backup
-        name: backup
-        size: 5Gi
+    
     properties:
-        SITE_CERT:
-          vault: SITE_CERT
         SITE_PRIVATE_KEY:
           vault: SITE_PRIVATE_KEY
-        revision : 24
+        SITE_CERT:
+          vault: SITE_CERT
+        revision : 1
