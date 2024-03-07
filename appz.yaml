@@ -1,7 +1,7 @@
     app:
         name: Nginx
         code: NGINX
-        notify: appzdev@cloudbourne.co
+        notify: srswain@ecloudcontrol.com
         
     build:
         version: 1.2
@@ -11,7 +11,7 @@
         image_template: nginx-1.14
         
     deploy:
-        context: alpha/DEV
+        context: sranjan1995/DEV
         replicas: 1
         port:
         - 443
