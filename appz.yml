@@ -14,6 +14,7 @@
         context: sranjan1995/DEV
         replicas: 1
         port:
+        - 80
         - 443
     
     properties:
@@ -21,4 +22,4 @@
           vault: SITE_PRIVATE_KEY
         SITE_CERT:
           vault: SITE_CERT
-        revision : 6
+        revision : 7
